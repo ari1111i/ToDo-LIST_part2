@@ -1,33 +1,34 @@
 import React from 'react';
-import Meals from './components/meals/Meals';
-import MealForm from './components/meals/MealForm'
-import MealItem from './components/meals/MealItem';
-import Button from './components/UI/Button'
+import TodoForm from './components/todo/TodoForm';
+import TodoList from './components/todo/TodoList';
+import { TodoProvider } from './components/todo/TodoContext';
+import './App.css'
+import { styled } from 'styled-components'
 
-
-
-const App = () => {
+function App() {
   return (
-    <div>
-     <Meals/>
-     <MealForm/>
-     <MealItem/>
-     <Button/>
-    
-    </div>
-  )
+    <TodoProvider>
+      <Div>
+        <H1>ToDo-List</H1>
+        <TodoForm />
+        <TodoList />
+        
+      </Div>
+    </TodoProvider>
+  );
 }
 
-export default App
 
+const H1 = styled('h1')`
+    text-align: center;
+    color: white;
+`
 
+const Div = styled('div')`
+    background-color: #4220a8;
+    height: 850px;
+    margin-top: -40px;
 
+`
 
-
-
-
-
-
-
-
-
+export default App;
